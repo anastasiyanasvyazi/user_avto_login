@@ -71,9 +71,9 @@ describe('Авторизация - Негативные и позитивные 
     it('Позитивный кейс: Приведение логина к строчным буквам', function () {
         cy.get('#mail').type('GerMan@Dolnikov.ru'); // Логин с разным регистром
         cy.get('#pass').type('iLoveqastudio1'); // Правильный пароль
-        cy.get('#loginButton').should('not.be.disabled').click(); // Нажать войти
+        cy.get('#loginButton').should('not.be.disabled').click();
         cy.get('#messageHeader').should('be.visible')
-            .and('contain', 'Такого логина или пароля нет'); // 
-        cy.get('#exitMessageButton > .exitIcon').should('be.visible'); // Проверка кнопки крестика
+            .and('contain', 'Авторизация прошла успешно');
+        cy.get('#exitMessageButton > .exitIcon').should('be.visible');
     });
 });
